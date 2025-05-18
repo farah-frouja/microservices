@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package course;
+
+import "google/protobuf/empty.proto";
+
+// Définition du modèle Course
+message Course {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+}
+
+// Requête contenant uniquement un ID
+message CourseIdRequest {
+  string id = 1;
+}
+
+// Liste de cours (utile pour GetAllCourses)
+message CourseList {
+  repeated Course courses = 1;
+}
+
+// Définition du service gRPC
+service CourseService {
+  rpc GetCourseById (CourseIdRequest) returns (Course);
+  rpc CreateCourse (Course) returns (Course);
+  rpc UpdateCourse (Course) returns (Course);
+  rpc DeleteCourse (CourseIdRequest) returns (Course);
+  rpc GetAllCourses (google.protobuf.Empty) returns (CourseList);
+}
