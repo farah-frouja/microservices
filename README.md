@@ -129,7 +129,7 @@ query {
 
 ## 👤 Auteur
 
-**Farah Frouja**  
+**Farah Frouja** 4GL2
 Projet réalisé dans le cadre d’un exercice de mise en pratique de microservices en Node.js
 
 ---
